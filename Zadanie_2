@@ -1,0 +1,78 @@
+// do poprawy
+package Zwierzęta;
+
+public abstract class Zwierze implements Latanie, Pływanie {
+    double predkosc;
+
+    public double getPredkosc() {
+        return predkosc;
+    }
+
+    public void setPredkosc(double predkosc) {
+        this.predkosc = predkosc;
+    }
+    
+    public void lec(){
+        System.out.println("Zwierze leci z predkoscia: " + getPredkosc());
+    }
+    
+    public void wyladuj(){
+        System.out.println("Zwierzę wylądowało.");
+    }
+}
+
+
+package Zwierzęta;
+
+public abstract class Ryba extends Zwierze implements Pływanie{
+    double predkosc;
+
+    public double getPredkosc() {
+        return predkosc;
+    }
+
+    public void setPredkosc(double predkosc) {
+        this.predkosc = predkosc;
+    }
+    
+    public void plyn(){
+        System.out.println("Ryba płynie z predkoscia: " + getPredkosc());
+    }
+    
+    public void wynurz(){
+        System.out.println("Ryba sie wynurzyla na powierzchnię");
+    }
+    
+    public void zanurz(){
+        System.out.println("Ryba sie zanurzyła pod powierzchnię");
+    }
+    
+    public abstract void jedz();
+    public abstract void wydalaj();
+}
+
+package Zwierzęta;
+
+public abstract class Wieloryb extends Zwierze {
+    public void jedz(){
+        System.out.println("Wieloryb je pokarm");
+    }
+    public void wydalaj(){
+        System.out.println("Wieloryb wydala resztki");
+    }
+}
+
+package Zwierzęta;
+
+public interface Pływanie {
+    void plyn();
+    void wynurz();
+    void zanurz();
+}
+
+package Zwierzęta;
+
+public interface Latanie {
+    void lec();
+    void wyladuj();
+}
